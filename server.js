@@ -7,7 +7,9 @@ require('dotenv').config();
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 const apiKey = process.env.GOOGLEAIKEY;
-
+app.get('/ping', (req, res) => {
+  res.status(200).send('Pong');
+});
 app.post('/api/generate', async (req, res) => {
   const { product, vibe } = req.body;
 
